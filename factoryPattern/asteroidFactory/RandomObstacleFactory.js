@@ -24,6 +24,7 @@ class RandomObstacleFactory {
 	}
 }
 
+// TODO: to allow for unit testing the randomness should be dependency injected into the class
 function generateRandomNumber1to100 () {
 	return Math.random() * 100
 }
