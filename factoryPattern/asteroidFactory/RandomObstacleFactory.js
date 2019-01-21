@@ -1,12 +1,8 @@
+const ObstacleFactory = require('./ObstacleFactory')
 const Android = require('./Asteroid')
 const PowerUp = require('./PowerUp')
 
-class RandomObstacleFactory {
-	constructor (difficulty, level) {
-		this.difficulty = difficulty
-		this.level = level
-	}
-
+class RandomObstacleFactory extends ObstacleFactory {
 	generateObstacle () {
 		if (generateRandomNumber1to100() + (this.difficutly * 3) > 100) {
 			return this.generatePowerUp()

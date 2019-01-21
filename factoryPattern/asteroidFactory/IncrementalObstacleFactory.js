@@ -1,11 +1,10 @@
+const ObstacleFactory = require('./ObstacleFactory')
 const Android = require('./Asteroid')
 const PowerUp = require('./PowerUp')
 
-class IncrementalObstacleFactory {
+class IncrementalObstacleFactory extends ObstacleFactory {
 	constructor (difficulty, level) {
-		this.difficulty = difficulty
-		this.level = level
-
+		super(difficulty, level)
 		this._counter = 0
 	}
 
