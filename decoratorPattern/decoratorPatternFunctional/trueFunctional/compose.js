@@ -1,7 +1,7 @@
 const logStart = (handleLog) => (result) => handleLog('Started')
 const logEnd = (handleLog) => (result) => handleLog('Ended')
 const errorHandler = (handleError) => (result) => {
-	// Could improve this working with monads?
+	// Could improve this with monads?
 	if (result.error) {
 		handleError()
 	}
