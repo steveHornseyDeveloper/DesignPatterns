@@ -1,7 +1,13 @@
-const logStart = (handleLog) => (result) => handleLog('Started')
-const logEnd = (handleLog) => (result) => handleLog('Ended')
+const logStart = (handleLog) => (result) => {
+	handleLog('Started')
+	return result
+}
+const logEnd = (handleLog) => (result) => {
+	handleLog('Ended')
+	return result
+}
+
 const errorHandler = (handleError) => (result) => {
-	// Could improve this with monads?
 	if (result.error) {
 		handleError()
 	}
@@ -9,10 +15,7 @@ const errorHandler = (handleError) => (result) => {
 	return result
 }
 
-const apiService = (fetch) => () => ({
-	status: 200,
-	result: 'important info!'
-})
+const apiService = (fetch) => () => (fetch('api/controller'))
 
 function consumeApiService (dependencies) {
 	const { handleLog, handleError, fetch } = dependencies
